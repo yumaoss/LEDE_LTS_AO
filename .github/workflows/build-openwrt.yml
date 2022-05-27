@@ -79,12 +79,20 @@ jobs:
         git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
         svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash  package/new/luci-app-openclash
         git clone -b lede https://github.com/pymumu/luci-app-smartdns.git package/new/luci-app-smartdns
-
+      
+    - name: clean
+      run: cd openwrt && ./scripts/feeds clean
+    
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
+
+    - name: rm
+      run: cd openwrt
+           rm -rf ./tmp
+           rm -rf .config
 
     - name: Load custom configuration
       run: |
