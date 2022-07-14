@@ -14,4 +14,4 @@
 sed -i 's/192.168.1.1/192.168.50.252/g' package/base-files/files/bin/config_generate
 
 # 5.18
-sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.18/g' target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.18/g' target/linux/x86/Makefile
