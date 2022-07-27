@@ -72,6 +72,12 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: Update app
+      run: |
+        cd openwrt
+        rm -rf feeds/luci/applications/luci-app-openclash
+        svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash  package/new/luci-app-openclash
+
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
