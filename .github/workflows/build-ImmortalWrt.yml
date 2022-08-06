@@ -75,8 +75,8 @@ jobs:
     - name: Update app
       run: |
         cd openwrt
-        rm -rf feeds/luci/applications/luci-app-openclash
-        svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash  package/new/luci-app-openclash
+        rm -rf feeds/packages/net/mosdns
+        git clone https://github.com/QiuSimons/openwrt-mos.git package/new/modns
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
