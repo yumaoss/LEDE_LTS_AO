@@ -76,8 +76,7 @@ jobs:
       run: |
         cd openwrt
         git clone https://github.com/QiuSimons/openwrt-mos.git package/new/modns
-        sed -i 's/+mosdns-neo/+mosdns/g' package/new/modns/luci-app-mosdns/Makefile
-        rm -rf package/new/modns/mosdns
+        rm -rf feeds/packages/net/mosdns
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
