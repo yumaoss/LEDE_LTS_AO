@@ -72,15 +72,6 @@ jobs:
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
-    - name: Update app
-      run: |
-        cd openwrt
-        git clone https://github.com/QiuSimons/openwrt-mos.git package/new/mosdns
-        rm -rf package/new/mosdns/mosdns
-        sed -i 's/+mosdns-neo/+mosdns/g' package/new/mosdns/luci-app-mosdns/Makefile
-        rm -rf feeds/packages/net/mosdns/files
-        sed -i '42,58d' feeds/packages/net/mosdns/Makefile
-
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
