@@ -20,3 +20,4 @@ wget https://raw.githubusercontent.com/aaa1230217/tools/main/ucl/patches/200-ucl
 #git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
+sed -i 's/default y/default n/g' package/openwrt-mos/mosdns/Makefile
