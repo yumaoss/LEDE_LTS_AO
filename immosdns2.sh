@@ -9,4 +9,5 @@
 #============================================================
 rm -rf ./feeds/packages/net/v2ray-geodata
 rm -rf ./feeds/packages/net/mosdns/files
+rm -rf ./feeds/luci/applications/luci-app-openclash
 sed -i '42, 47d' feeds/packages/net/mosdns/Makefile
