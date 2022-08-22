@@ -20,6 +20,7 @@ sed -i 's/192.168.1.1/192.168.50.252/g' package/base-files/files/bin/config_gene
 #git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 #git clone -b 18.06 https://github.com/garypang13/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/QiuSimons/openwrt-mos.git package/new/openwrt-mos
+svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash  package/new/luci-app-openclash
 rm -rf ./package/new/openwrt-mos/mosdns
 sed -i 's/+mosdns-neo/+mosdns/g' package/new/openwrt-mos/luci-app-mosdns/Makefile
 curl -fsSL  https://raw.githubusercontent.com/aaa1230217/KPR_Fork_mosdns-diy/main/cus_config.yaml > ./package/new/openwrt-mos/luci-app-mosdns/root/etc/mosdns/cus_config.yaml
