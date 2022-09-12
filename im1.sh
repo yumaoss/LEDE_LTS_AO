@@ -10,3 +10,4 @@
 #curl -fsSL  https://raw.githubusercontent.com/aaa1230217/KPR_Fork_mosdns-diy/main/cus_config.yaml > ./package/openwrt-mos/luci-app-mosdns/root/etc/mosdns/cus_config.yaml
 #rm -rf ./feeds/packages/net/mosdns
 #rm -rf ./feeds/packages/net/v2ray-geodata
+svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash  package/new/luci-app-openclash
