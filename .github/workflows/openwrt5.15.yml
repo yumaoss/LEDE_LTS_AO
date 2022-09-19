@@ -68,6 +68,9 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
     - name: 下载插件
       run: cd openwrt && ./scripts/feeds update -a
+      
+    - name: 删除主题
+      run: cd openwrt && rm -rf feeds/luci/themes/luci-theme-argon
 
     - name: 读取插件
       run: cd openwrt && ./scripts/feeds install -a
