@@ -71,6 +71,11 @@ jobs:
       
     - name: 删除主题
       run: cd openwrt && rm -rf feeds/luci/themes/luci-theme-argon
+      
+    - name: 下载geoip文件
+      run: |
+        cd openwrt && cd package/new/luci-app-openclash/root/etc/openclash
+        wget https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
 
     - name: 读取插件
       run: cd openwrt && ./scripts/feeds install -a
