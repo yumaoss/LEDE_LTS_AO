@@ -70,6 +70,19 @@ jobs:
     - name: 下载插件
       run: cd openwrt && ./scripts/feeds update -a
 
+    - name: 删除openclash
+      run: cd openwrt && rm -rf ./feeds/luci/applications/luci-app-openclash
+
+    - name: 下载openclash
+      run: |
+        cd openwrt
+        svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash  package/new/luci-app-openclash
+        
+    - name: 下载geoip
+      run: |
+        cd openwrt && cd package/new/luci-app-openclash/root/etc/openclash
+        wget https://github.com/v2fly/geoip/releases/latest/download/geoip.dat
+        
     - name: 读取插件
       run: cd openwrt && ./scripts/feeds install -a
 
